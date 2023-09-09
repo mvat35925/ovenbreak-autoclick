@@ -26,6 +26,8 @@ Only support bluestacks 5
 
 Setting -> Display -> Display resolution -> (Landscape) & (1920 x 1080)
 
+SHOULD BE IN FULL SCREEN (F11).
+
 ### In-game setting
 
 Map - Trophy race, Land 1
