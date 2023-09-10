@@ -49,9 +49,11 @@ Treasures - Fireworks, Bear coin bank, Coral
 ## FAQ
 
 Is it safe?
+
 Maybe.
 
 # PLANS
+
 <ul>
   <li>Support more screen resolution.</li>
   <li>Works while the bluestacks is not focused</li>
