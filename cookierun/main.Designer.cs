@@ -72,7 +72,6 @@
             this.size2.Name = "size2";
             this.size2.Size = new System.Drawing.Size(67, 17);
             this.size2.TabIndex = 3;
-            this.size2.TabStop = true;
             this.size2.Text = "just radio";
             this.size2.UseVisualStyleBackColor = true;
             // 
@@ -82,10 +81,10 @@
             this.size1.Checked = true;
             this.size1.Location = new System.Drawing.Point(26, 36);
             this.size1.Name = "size1";
-            this.size1.Size = new System.Drawing.Size(79, 17);
+            this.size1.Size = new System.Drawing.Size(87, 17);
             this.size1.TabIndex = 1;
             this.size1.TabStop = true;
-            this.size1.Text = "1920, 1080";
+            this.size1.Text = "1920  x 1080";
             this.size1.UseVisualStyleBackColor = true;
             // 
             // label1

@@ -16,6 +16,7 @@ namespace cookierun
     public partial class main : Form
     {
         int c = 0;
+
         // Define constants for hotkeys
         private const int MOD_CONTROL = 0x0002;
         private const int WM_HOTKEY = 0x0312;
@@ -42,6 +43,7 @@ namespace cookierun
 
             return false;
         }
+        // Setup globally keys
         protected override void WndProc(ref Message m)
         {
             base.WndProc(ref m);
@@ -93,13 +95,16 @@ namespace cookierun
         [DllImport("user32.dll", SetLastError = true)]
         public static extern void mouse_event(uint dwFlags, int dx, int dy, uint dwData, int dwExtraInfo);
 
+        // Define key constant
         public const int MOUSEEVENTF_LEFTDOWN = 0x02;
         public const int MOUSEEVENTF_LEFTUP = 0x04;
 
         public main()
         {
             InitializeComponent();
+
             this.KeyPreview = true;
+
             // Register hotkeys
             RegisterHotKey(this.Handle, HOTKEY_START, MOD_CONTROL, Keys.F1);
             RegisterHotKey(this.Handle, HOTKEY_STOP, MOD_CONTROL, Keys.F2);
@@ -112,14 +117,11 @@ namespace cookierun
             mouse_event(dwFlags, x, y, 0, 0);
         }
 
-
-
         private void pixelsBtn_Click(object sender, EventArgs e)
         {
             pixels form = new pixels();
             form.Show();
         }
-
 
         private Color GetPixelColor(int x, int y)
         {
@@ -157,31 +159,46 @@ namespace cookierun
 
         private void autoclickTimer_Tick(object sender, EventArgs e)
         {
+            // check the screen size 1920 x 1080
             if (size1.Checked)
             {
-                if (checkColor(201, 170, 41, 207, 214) && checkColor(339, 570, 78, 41, 28))
+                // PRACTICE BUTTON
+                if (checkColor(250, 376, 113, 63, 28) && checkColor(900, 736, 42, 28, 21))
                 {
-                    SetCursorPos(1745, 912);
+                    SetCursorPos(1627, 956);
                     MouseEvent(MOUSEEVENTF_LEFTDOWN, 0, 0);
                     MouseEvent(MOUSEEVENTF_LEFTUP, 0, 0);
                 }
-                else if (checkColor(1312, 445, 255, 243, 212) && checkColor(305, 470, 31, 16, 10))
+                // popup PRACTICE
+                else if (checkColor(1260, 697, 255, 194, 24) && checkColor(882, 708, 206, 194, 163))
                 {
                     c += 1;
                     count.Text = "Run:" + c + " time(s)";
-                    SetCursorPos(1101, 687);
+                    SetCursorPos(1260, 697);
                     MouseEvent(MOUSEEVENTF_LEFTDOWN, 0, 0);
                     MouseEvent(MOUSEEVENTF_LEFTUP, 0, 0);
                 }
-                else if (checkColor(254, 198, 255, 230, 37) && checkColor(1049, 934, 255, 194, 24))
+
+                // OK BUTTON ( end ) 
+                else if (checkColor(209, 181, 255, 230, 37) && checkColor(1069, 968, 255, 194, 24))
                 {
-                    SetCursorPos(1049, 934);
+                    SetCursorPos(1069, 968);
                     MouseEvent(MOUSEEVENTF_LEFTDOWN, 0, 0);
                     MouseEvent(MOUSEEVENTF_LEFTUP, 0, 0);
                 }
-                else if(checkColor(398, 127, 251, 199, 36) && checkColor(1055, 895, 255, 194, 24))
+
+                // Pouches skip
+                else if (checkColor(315, 99, 251, 199, 36) && checkColor(1047, 929, 255, 194, 24))
                 {
-                    SetCursorPos(1055, 895);
+                    SetCursorPos(1047, 929);
+                    MouseEvent(MOUSEEVENTF_LEFTDOWN, 0, 0);
+                    MouseEvent(MOUSEEVENTF_LEFTUP, 0, 0);
+                }
+
+                // ADS skip
+                else if(checkColor(1471, 209, 155, 69, 0) && checkColor(1083, 841, 222, 72, 249))
+                {
+                    SetCursorPos(1471, 209);
                     MouseEvent(MOUSEEVENTF_LEFTDOWN, 0, 0);
                     MouseEvent(MOUSEEVENTF_LEFTUP, 0, 0);
                 }
