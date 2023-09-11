@@ -46,13 +46,13 @@ Treasures - Fireworks, Bear coin bank, Coral
 
 ![Screenshot 2023-09-10 022807](https://github.com/mvat35925/ovenbreak-autoclick/assets/93734071/9f6ea54e-afec-4585-80d5-65b55feb398f)
 
-## FAQ
+# FAQ
 
 Is it safe?
 
 Maybe.
 
-# PLANS
+## PLANS
 
 <ul>
   <li>Support more screen resolution.</li>
